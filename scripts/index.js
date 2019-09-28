@@ -27,6 +27,8 @@ class Database {
     }
 }
 
+module.exports = Database;
+
 /*
 let serviceAccount = require('./fireBaseAuth');
 let dataBase = new Database(serviceAccount);

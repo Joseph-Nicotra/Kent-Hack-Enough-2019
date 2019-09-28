@@ -27,4 +27,9 @@ let docRef = db.collection('visitors').get().then((snapshot) =>{
         console.log(doc.data());
     });
 });
+Users
+-firstName
+-lastName
+-isAllowed
+-permission
 */
