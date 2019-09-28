@@ -25,6 +25,10 @@ class Database {
     deleteData(options){
         return this.db.collection(options.collection).doc(options.doc).delete();
     }
+
+    deleteTable(options){
+        return this.db.collection(options.collection).delete();
+    }
 }
 
 module.exports = Database;
