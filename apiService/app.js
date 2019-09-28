@@ -55,7 +55,7 @@ app.db.connect().then(() => {
 
     app.post('/devices', (req, res)=>{
         console.log(req.body.updates);
-        app.db.updateData({db: 'shusphere', table: 'devices', updates: JSON.parse(req.updates)});
+        app.db.updateData({db: 'shusphere', table: 'devices', updates: JSON.parse(req.body.updates)});
     });
     app.listen(port, ()=>{
         console.log("The App is listening on port: " + port);
