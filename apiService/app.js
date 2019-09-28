@@ -43,11 +43,7 @@ app.db.connect().then(() => {
     app.post('/visitors', (req, res)=>{
         let action = req.body.action;
         if(action.toLowerCase() === "create"){
-            let options = {
-                id: req.body.id,
-                lastSignedIn: req.body.lastSignedIn
-            }
-            app.db.insertData({db: 'shusphere', table: 'visitors', data: {options}});
+            app.db.insertData({db: 'shusphere', table: 'visitors', data: {id: req.body.id, lastSignedIn: req.body.lastSignedIn}});
         }
         else if(action.toLowerCase() === "delete"){
             app.db.deleteData({db: 'shusphere', table: 'visitors', id: req.body.id});

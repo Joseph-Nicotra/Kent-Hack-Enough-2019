@@ -50,8 +50,11 @@ class Database {
         });
     }
 
-    updateData(options, fields){
-        r.db(options.db).table(options.table).get(options.id).update({})
+    updateData(options){
+        r.db(options.db).table(options.table).get(options.id).update(options.updates).run(this.connection, (err, result)=>{
+            if (err) throw err;
+            console.log("Data Updated!");
+        })
     }
 }
 
