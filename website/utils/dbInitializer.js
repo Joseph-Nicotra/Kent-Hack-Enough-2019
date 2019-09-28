@@ -17,7 +17,7 @@ function formatNumber(number){
 let db = new Database(process.env.DB_HOST, process.env.DB_PORT);
 db.connect().then(()=>{
 
-    db.createTable({db: 'shusphere', table: 'requests'});
+    //db.createTable({db: 'shusphere', table: 'requests'});
     /*
     //Create shusphere Database
     db.createDatabase({db: 'shusphere'}).then(()=>{
