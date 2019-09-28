@@ -22,18 +22,18 @@ class Database {
         });
     }
 
-    createDatabase(options){
-        return r.dbCreate(options.db).run(this.connection, (err) =>{
-            if (err) throw err;
-            console.log("Database Created!");
-        });
-    }
-
     deleteData(options){
         return r.db(options.db).table(options.table).get(options.id).delete().run(this.connection, (err)=>{
             if (err) throw err;
             console.log("Data Deleted!");
         })
+    }
+
+    createDatabase(options){
+        return r.dbCreate(options.db).run(this.connection, (err) =>{
+            if (err) throw err;
+            console.log("Database Created!");
+        });
     }
 
     getData(options){
@@ -48,6 +48,13 @@ class Database {
             if (err) throw err;
             console.log("Data Inserted!");
         });
+    }
+
+    updateData(options){
+        r.db(options.db).table(options.table).get(options.id).update(options.updates).run(this.connection, (err, result)=>{
+            if (err) throw err;
+            console.log("Data Updated!");
+        })
     }
 }
 

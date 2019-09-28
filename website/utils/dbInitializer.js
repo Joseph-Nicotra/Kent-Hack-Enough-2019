@@ -1,6 +1,6 @@
 const Database = require('./db');
 //const Data = require('./data.json');
-//const Devices = require('./systems.json');
+const Devices = require('./systems.json');
 require('dotenv').config();
 
 /*
@@ -45,9 +45,17 @@ db.connect().then(()=>{
    db.insertData({db: 'shusphere', table: 'users', data: {firstName: 'Vinayak', lastName: 'Prataap', isAllowed: true, permissions: 1, id: '315323'}});
    */
 
-   /*
+    /*
+    Devices.systems.forEach((system)=>{
+        db.insertData({db: 'shusphere', table: 'devices', data: {name: system, millis: 0, type: 'systems'}});
+    });
+
+    Devices.controllers.forEach((system)=>{
+        db.insertData({db: 'shusphere', table: 'devices', data: {name: system, millis: 0, type: 'controllers'}});
+    });
+
     Devices.accessories.forEach((system)=>{
-        db.insertData({db: 'shusphere', table: 'devices', data: {name: system, millis: 0, ids: [], type: 'accessories'}});
+        db.insertData({db: 'shusphere', table: 'devices', data: {name: system, millis: 0, type: 'accessories'}});
     });
     */
 

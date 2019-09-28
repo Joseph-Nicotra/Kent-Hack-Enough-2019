@@ -43,7 +43,7 @@ app.db.connect().then(() => {
     app.post('/visitors', (req, res)=>{
         let action = req.body.action;
         if(action.toLowerCase() === "create"){
-            app.db.insertData({db: 'shusphere', table: 'visitors', data: {id: req.body.id, lastSignedIn: req.body.lastSignedIn}});
+            app.db.insertData({db: 'shusphere', table: 'visitors', data: {id: req.body.id, lastSignedIn: req.body.lastSignedIn, devices: JSON.parse(req.body.devices)}});
         }
         else if(action.toLowerCase() === "delete"){
             app.db.deleteData({db: 'shusphere', table: 'visitors', id: req.body.id});
@@ -55,7 +55,7 @@ app.db.connect().then(() => {
 
     app.post('/devices', (req, res)=>{
         console.log(req.body.id);
-        app.db.updateData({db: 'shusphere', table: 'devices', id: req.body.id ,updates: JSON.parse(req.body.updates)});
+        app.db.updateData({db: 'shusphere', table: 'devices', id: req.body.id, updates: JSON.parse(req.body.updates)});
     });
     app.listen(port, ()=>{
         console.log("The App is listening on port: " + port);
