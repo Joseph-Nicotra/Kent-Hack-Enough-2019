@@ -1,0 +1,14 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "Scripts to help during development of SHU Sphere Assistant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinayak Prataap (p-vinayak)",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^8.6.0"
+  }
+}
