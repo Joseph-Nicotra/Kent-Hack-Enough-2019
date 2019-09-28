@@ -16,6 +16,8 @@ function formatNumber(number){
 
 let db = new Database(process.env.DB_HOST, process.env.DB_PORT);
 db.connect().then(()=>{
+
+    db.createTable({db: 'shusphere', table: 'requests'});
     /*
     //Create shusphere Database
     db.createDatabase({db: 'shusphere'}).then(()=>{
@@ -54,9 +56,5 @@ db.connect().then(()=>{
    db.insertData({db: 'shusphere', table: 'contacts', data: {firstName: 'Jane', lastName: 'Doe', email: "j.doe@example.com", position: "Assistant Supervisor", phone: "+1-444-444-1234"}});
    db.insertData({db: 'shusphere', table: 'contacts', data: {firstName: 'Michael', lastName: 'Jones', email: "m.jones@example.com", position: "Assistant Supervisor", phone: "+1-333-333-1234"}});
    */
-
-   db.getData({db: 'shusphere', table: 'devices', field: 'systems'}).then((data)=>{
-       console.log(data);
-   });
 });
 

@@ -24,12 +24,6 @@ app.db.connect().then(() => {
         });
     });
     
-    app.get('/complaints', (req, res)=>{
-        app.db.getData({db: 'shusphere', table: 'complaints', field: 'id'}).then((data)=>{
-            res.json(data);
-        });
-    });
-    
     app.get('/contacts', (req, res)=>{
         app.db.getData({db: 'shusphere', table: 'contacts', field: 'id'}).then((data)=>{
             res.json(data);
