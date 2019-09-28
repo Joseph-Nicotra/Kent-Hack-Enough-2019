@@ -47,7 +47,7 @@ db.connect().then(()=>{
 
    /*
     Devices.accessories.forEach((system)=>{
-        db.insertData({db: 'shusphere', table: 'devices', data: {name: system, hours: 0, ids: [], type: 'accessories'}});
+        db.insertData({db: 'shusphere', table: 'devices', data: {name: system, millis: 0, ids: [], type: 'accessories'}});
     });
     */
 
