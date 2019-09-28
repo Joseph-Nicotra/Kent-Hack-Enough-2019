@@ -1,0 +1,24 @@
+{
+  "name": "shu-sphere-assistant",
+  "version": "1.0.0",
+  "description": "Website made for assisting with the SETON Hill Media Sphere Work Study",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph-Nicotra/Kent-Hack-Enough-2019.git"
+  },
+  "author": "Vinayak Prataap (GitHub: p-vinayak)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joseph-Nicotra/Kent-Hack-Enough-2019/issues"
+  },
+  "homepage": "https://github.com/Joseph-Nicotra/Kent-Hack-Enough-2019#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "rethinkdb": "^2.3.3"
+  }
+}
