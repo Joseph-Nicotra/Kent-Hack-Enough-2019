@@ -1,7 +1,7 @@
 const r = require('rethinkdb');
 
 class Database {
-    constructor(host, port){
+    constructor(host, port, db){
         this.host = host;
         this.port = port;
         this.connection = null;
@@ -27,6 +27,13 @@ class Database {
             if (err) throw err;
             console.log("Database Created!");
         });
+    }
+
+    getData(options){
+        return r.db(options.db).table(options.table).orderBy(options.field).run(this.connection, (err, result)=>{
+            if (err) throw err;
+            console.log("Received Data!");
+        })
     }
 
     insertData(options){
