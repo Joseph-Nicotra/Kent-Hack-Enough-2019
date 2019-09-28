@@ -1,0 +1,2 @@
+//make registration script
+//firebase
