@@ -29,6 +29,13 @@ class Database {
         });
     }
 
+    deleteData(options){
+        return r.db(options.db).table(options.table).get(options.id).delete().run(this.connection, (err)=>{
+            if (err) throw err;
+            console.log("Data Deleted!");
+        })
+    }
+
     getData(options){
         return r.db(options.db).table(options.table).orderBy(options.field).run(this.connection, (err, result)=>{
             if (err) throw err;

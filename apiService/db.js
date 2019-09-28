@@ -49,6 +49,10 @@ class Database {
             console.log("Data Inserted!");
         });
     }
+
+    updateData(options, fields){
+        r.db(options.db).table(options.table).get(options.id).update({})
+    }
 }
 
 module.exports = Database;

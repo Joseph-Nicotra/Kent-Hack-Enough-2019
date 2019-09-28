@@ -41,20 +41,24 @@ app.db.connect().then(() => {
     });
     
     app.post('/visitors', (req, res)=>{
-        let action = request.body.action;
+        let action = req.body.action;
         if(action.toLowerCase() === "create"){
             let options = {
-                id: request.body.id,
-                lastSignedIn: request.body.lastSignedIn
+                id: req.body.id,
+                lastSignedIn: req.body.lastSignedIn
             }
             app.db.insertData({db: 'shusphere', table: 'visitors', data: {options}});
         }
         else if(action.toLowerCase() === "delete"){
-            app.db.deleteData({db: 'shusphere', table: 'visitors', id: request.body.id});
+            app.db.deleteData({db: 'shusphere', table: 'visitors', id: req.body.id});
         }
         else{
             res.send("Invalid Query");
         }
+    });
+
+    app.post('/devices', (req, res)=>{
+        
     });
     app.listen(port, ()=>{
         console.log("The App is listening on port: " + port);
