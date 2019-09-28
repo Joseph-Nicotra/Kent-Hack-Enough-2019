@@ -12,8 +12,12 @@ class Database {
         this.db = admin.firestore();
     }
 
-    getData(options){
+    getTable(options){
         return this.db.collection(options.collection).get();
+    }
+
+    getDoc(options){
+        return this.db.collection(option.collection).doc(options.doc).get();
     }
 
     setData(options){
@@ -32,9 +36,3 @@ class Database {
 }
 
 module.exports = Database;
-
-/*
-let serviceAccount = require('./fireBaseAuth');
-let dataBase = new Database(serviceAccount);
-dataBase.connect();
-*/
