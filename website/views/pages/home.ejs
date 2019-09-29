@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') -%>
-<body>
-    <%- include('../partials/header') -%>
-    <h2>General Information</h3>
-    Status: <%= status %> <br>
-    Working: <%= working %> <br>
-    Visitor Count: <%= visitorCount %>
-
-    <form action="/requests" method="post">
-        <h2>Media Sphere Request Form</h3>
-        Title: <input type="text" name="title" id=""> (e.g Name of a game/console)<br>
-        Type: <input type="text" name="type" id=""> (e.g Console, PC) <br>
-        Details: <input type="text" name="details" id=""> (Details you'd like to mention)<br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
+    <head>
+        <%- include('../partials/head') -%>
+    </head>
+    <body>
+        <%- include('../partials/header') -%>
+        <h2>General Information</h3>
+        Status: <%= status %> <br>
+        Working: <%= working %> <br>
+        Visitor Count: <%= visitorCount %>
+        
+        <form action="/requests" method="post">
+            <h2>Media Sphere Request Form</h3>
+            Title: <input type="text" name="title" id=""> (e.g Name of a game/console)<br>
+            Type: <input type="text" name="type" id=""> (e.g Console, PC) <br>
+            Details: <input type="text" name="details" id=""> (Details you'd like to mention)<br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
 </html>

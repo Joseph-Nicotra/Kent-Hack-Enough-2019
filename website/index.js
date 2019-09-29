@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const port = 7687;
+const port = 9999;
 const Database = require('./utils/db');
 const uuid = require('uuid/v4');
 let app = express();
