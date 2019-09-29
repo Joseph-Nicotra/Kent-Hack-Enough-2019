@@ -1,5 +1,0 @@
-{
-    "systems": ["Desktop Computer", "Xbox 360", "Xbox One", "Playstation 2", "Playstation 3", "Playstation 4", "Nintendo Switch", "Nintendo Wii", "Nintendo Wii U"],
-    "controllers": ["Xbox 360", "Xbox One", "Playstation 2", "Playstation 3", "Playstation 4", "Playstation 4 Move", "Playstation VR", "Playstation VR Aim", "Joycon", "Nintendo Pro Controller", "Wii Fit", "WiiMote", "Wii U Gamepad", "Gamecube Controller"],
-    "accessories": ["Playstation 4 Camera", "Playstation 4 Camera", "Wireless headset", "Wired headset", "Xbox Kinect"]
-}

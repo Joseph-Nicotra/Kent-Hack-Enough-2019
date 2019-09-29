@@ -5,7 +5,10 @@ let app = require('../index');
 router.path = 'info';
 
 router.get('/', (req, res)=>{
-    res.render('info', {title: 'Info'});
+    app.database.getData({db: 'shusphere', table: 'visitors', field: 'lastSignedIn'}).then((visitors)=>{
+        console.log(visitors);
+        res.render('info', {title: 'Info'});
+    });
 });
 
 module.exports = router;

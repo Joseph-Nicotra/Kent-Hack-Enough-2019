@@ -1,6 +1,6 @@
 const Database = require('./db');
 //const Data = require('./data.json');
-const Devices = require('./systems.json');
+//const Devices = require('./systems.json');
 require('dotenv').config();
 
 /*
@@ -16,6 +16,20 @@ function formatNumber(number){
 
 let db = new Database(process.env.DB_HOST, process.env.DB_PORT);
 db.connect().then(()=>{
+
+    //db.insertData({db: 'shusphere', table: 'weekly', data: {id: '7days', data: [[]]}});
+
+    /*
+    let days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let obj = {};
+    for(let x = 0; x < 7; x++){
+        obj[days[x]] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    }
+    db.insertData({db: 'shusphere', table: 'weekly', data: {id: '7days', data: obj}});
+    */
+
+
+    //db.deleteData({db: 'shusphere', table: 'weekly', id: 'd9040b4b-9cc2-4a76-bde1-4588be012731'});
 
     //db.createTable({db: 'shusphere', table: 'requests'});
     /*

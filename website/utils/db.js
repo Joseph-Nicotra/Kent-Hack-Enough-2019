@@ -50,8 +50,15 @@ class Database {
         });
     }
 
+    getCount(options){
+        return r.db(options.db).table(options.table).count().run(this.connection, (err, result)=>{
+            if (err) throw err;
+            console.log("Got data count!");
+        });
+    }
+
     insertData(options){
-        r.db(options.db).table(options.table).insert(options.data).run(this.connection, (err, result)=>{
+        return r.db(options.db).table(options.table).insert(options.data).run(this.connection, (err, result)=>{
             if (err) throw err;
             console.log("Data Inserted!");
         });
