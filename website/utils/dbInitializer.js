@@ -64,5 +64,13 @@ db.connect().then(()=>{
    db.insertData({db: 'shusphere', table: 'contacts', data: {firstName: 'Jane', lastName: 'Doe', email: "j.doe@example.com", position: "Assistant Supervisor", phone: "+1-444-444-1234"}});
    db.insertData({db: 'shusphere', table: 'contacts', data: {firstName: 'Michael', lastName: 'Jones', email: "m.jones@example.com", position: "Assistant Supervisor", phone: "+1-333-333-1234"}});
    */
+
+   /*
+   db.getData({db: 'shusphere', table: 'devices', field: 'id'}).then((devices)=>{
+        devices.forEach((device)=>{
+            db.updateData({db: 'shusphere', table: 'devices', id: device.id, updates: {millis: Math.floor(Math.random() * 50)}});
+        });
+   });
+   */
 });
 

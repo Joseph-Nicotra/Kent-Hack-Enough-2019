@@ -8,6 +8,7 @@ require('dotenv').config();
 app.set('views', './views/pages');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
 app.database = new Database(process.env.DB_HOST, process.env.DB_PORT);
 app.database.connect().then(()=>{
     module.exports = app;

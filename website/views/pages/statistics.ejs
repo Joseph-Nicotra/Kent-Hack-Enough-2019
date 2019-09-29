@@ -3,5 +3,36 @@
 <%- include('../partials/head') -%>
 <body>
     <%- include('../partials/header') -%>
+    <script src="js/moment.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var labels = "<%= labels %>".split(",");
+        var millis = "<%= millis %>".split(",");
+        var myCHart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Total Hours Used',
+                    data: millis,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
 </body>
 </html>

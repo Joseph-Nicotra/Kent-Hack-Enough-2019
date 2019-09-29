@@ -43,6 +43,13 @@ class Database {
         })
     }
 
+    getFilteredData(options){
+        return r.db(options.db).table(options.table).filter(options.filter).run(this.connection, (err, result)=>{
+            if (err) throw err;
+            console.log("Received Filtered Data!");
+        });
+    }
+
     insertData(options){
         r.db(options.db).table(options.table).insert(options.data).run(this.connection, (err, result)=>{
             if (err) throw err;
