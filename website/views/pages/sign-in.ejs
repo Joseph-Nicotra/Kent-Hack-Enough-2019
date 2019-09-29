@@ -5,19 +5,16 @@
   </head>
 
   <body>
-    <%- include('../partials/header') -%>
-    
+    <%- include('../partials/header') -%> <%- include('../partials/sidebar') -%>
+
     <form action="/sign-in" method="post">
-      User Search: <input type="text" name="queryString"> <br>
-      <input type="submit" value="Search">
+      User Search: <input type="text" name="queryString" /> <br />
+      <input type="submit" value="Search" />
     </form>
 
-    <% if(searchResult) { %>
-      <% searchResult.forEach((result)=>{ %>
-        Name: <%= result.firstName %> <%= result.lastName %>
-        ID: <%= result.id %>
-        <button type="submit" name="<%= result.id %>">Sign-In</button> <br>
-      <% }) %>
-    <% } %>
+    <% if(searchResult) { %> <% searchResult.forEach((result)=>{ %> Name: <%=
+    result.firstName %> <%= result.lastName %> ID: <%= result.id %>
+    <button type="submit" name="<%= result.id %>">Sign-In</button> <br />
+    <% }) %> <% } %>
   </body>
 </html>
