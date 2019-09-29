@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') -%>
-  </head>
-
-  <body>
-    <%- include('../partials/header') -%>
+    <head>
+        <%- include('../partials/head') -%>
+    </head>
+    <body>
+    <%- include('../partials/header') -%> <% contacts.forEach((contact)=>{ %>
+    Name: <%= contact.firstName %> <%= contact.lastName %> <br />
+    Email: <%= contact.email %> <br />
+    Phone: <%= contact.phone %> <br />
+    Position: <%= contact.position %> <br />
+    <br />
+    <% }) %>
   </body>
 </html>

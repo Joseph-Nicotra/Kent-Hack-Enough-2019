@@ -17,6 +17,12 @@ function formatNumber(number){
 let db = new Database(process.env.DB_HOST, process.env.DB_PORT);
 db.connect().then(()=>{
 
+    /*
+    db.getFilteredData({db: 'shusphere', table: 'users', filter: (user)=>{return user('firstName').contains('a')}}).then((res)=>{
+        console.log(res);
+    });
+    */
+   
     //db.insertData({db: 'shusphere', table: 'weekly', data: {id: '7days', data: [[]]}});
 
     /*

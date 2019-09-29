@@ -32,6 +32,16 @@ app.database.connect().then(()=>{
             res.send("Your request was successfully noted :)");
         });
     });
+
+    app.post('/sign-in', (req, res) => {
+        let queryString = req.body.queryString;
+        app.database.getFilteredData({db: 'shusphere', table: 'users', filter: (user)=> {return user("firstName").downcase().match(queryString.toLowerCase()).or(user("lastName").downcase().match(queryString.toLowerCase()).or(user("id").match(queryString)))}  }).then((response)=>{
+            response.toArray((err, result)=>{
+                if (err) throw err;
+                res.render('sign-in', {title: 'Sign-In', searchResult: result});
+            });
+        })
+    });
     
     app.listen(port, () =>{
         console.log("The App is Listening on Port: " + port);
